@@ -25,7 +25,6 @@ public class BookController {
     @GetMapping("/getstatistics")
     public Map<String, Integer> getBooksStatistics(@RequestHeader("Authorization") String token) {
         return  bookStatisticsService.getStatistics(token);
-//        return null;
     }
 
     @PostMapping("/getBooks")

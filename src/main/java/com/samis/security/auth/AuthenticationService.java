@@ -82,6 +82,7 @@ public class AuthenticationService {
         userRepository.save(user);
 
         var jwtToken = jwtService.generateToken(user);
+        System.out.println(jwtToken);
         return AuthenticationResponse.builder()
                 .token(jwtToken)
                 .build();

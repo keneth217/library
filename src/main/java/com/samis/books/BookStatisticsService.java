@@ -29,6 +29,10 @@ public class BookStatisticsService {
 
     public Map<String, Integer> getStatistics(String token) {
         String username = ExtractUserNameJwtMyCustom.extractUsername(token);
+        System.out.println("------------------------------------username-------------------------");
+        System.out.println(username);
+        System.out.println(token);
+        System.out.println("------------------------------------username-------------------------");
         List<Book> bookList = bookRepository.findLastByschoolName(username);
         List<BookTransaction> borrowedBook = transactionRepository.findBybookIsReturnedAndSchoolName(false,username);
         List<BookWriteOff> writtenOffBooks=bookWriteOffRepository.findByschoolName(username);
